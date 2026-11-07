@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ashish Patel | Production Engineering Portfolio</title>
+<meta name="description" content="Ashish Patel, Production Engineering student at VSSUT Burla. SolidWorks, Python automation, manufacturing and Lean.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#0a0d11;--bg2:#0e1319;--panel:#141a21;--line:#27313d;--metal:#8f9bab;--steel:#c9d1db;--cyan:#00e5ff;--orange:#ff6b1a;
+--head:'Chakra Petch','Segoe UI',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{background:var(--bg);color:var(--steel);font:400 1.06rem/1.7 var(--head);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus-visible,.card:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;background:rgba(10,13,17,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:700 1.35rem var(--head);letter-spacing:.08em;color:#fff}.logo i{color:var(--orange);font-style:normal}
+nav{display:flex;gap:clamp(14px,3vw,34px)}
+nav a{font:400 .85rem var(--mono);color:var(--metal);transition:color .2s}nav a:hover{color:var(--cyan)}
+#bar{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--orange))}
+
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px 6vw 70px;overflow:hidden;background:radial-gradient(ellipse at 72% 42%,#0f2630 0,transparent 62%),var(--bg)}
+.grid{position:absolute;inset:-60px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;opacity:.3;animation:pan 24s linear infinite;-webkit-mask-image:radial-gradient(circle at 60% 50%,#000 10%,transparent 72%);mask-image:radial-gradient(circle at 60% 50%,#000 10%,transparent 72%)}
+.cad{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--metal);stroke-width:1.5;opacity:.6}
+.cad .c{stroke:var(--cyan)}.cad .o{stroke:var(--orange)}.cad .dash{stroke-dasharray:4 10;opacity:.55}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 60s linear infinite}
+.tp{stroke:var(--orange);stroke-dasharray:1;stroke-dashoffset:1;animation:draw 16s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0,rgba(10,13,17,.72) 34%,transparent 66%);pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:760px}
+.hero-in>*{opacity:0;animation:up .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i,0)*.18s + .1s)}
+h1{font:700 clamp(3.2rem,11vw,7.6rem)/.95 var(--head);letter-spacing:.01em;color:#fff;text-shadow:0 0 40px rgba(0,229,255,.28)}
+.sub{margin-top:26px;font:400 clamp(1rem,2.3vw,1.35rem)/1.5 var(--mono);color:var(--steel);min-height:2.1em}
+.caret{display:inline-block;width:.6ch;height:1.15em;margin-left:4px;vertical-align:-.2em;background:var(--orange);animation:blink 1s steps(1) infinite}
+.cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+.btn{display:inline-block;padding:13px 28px;font:600 1rem var(--head);border:1px solid var(--cyan);border-radius:2px;color:var(--cyan);transition:background .25s,color .25s,box-shadow .25s}
+.btn:hover{background:var(--cyan);color:#001318;box-shadow:0 0 26px rgba(0,229,255,.5)}
+.btn.pri{background:var(--orange);border-color:var(--orange);color:#1a0900}
+.btn.pri:hover{background:#ff8a45;box-shadow:0 0 28px rgba(255,106,26,.6)}
+
+section.s{padding:110px 6vw}
+#skills,#education{background:var(--bg2);border-block:1px solid var(--line)}
+.tl{position:relative;padding-left:34px;max-width:820px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--cyan),var(--orange))}
+.ed{position:relative;padding:22px 24px;margin-bottom:22px;background:var(--panel);border:1px solid var(--line);border-radius:4px}
+.ed:last-child{margin-bottom:0}
+.ed::before{content:"";position:absolute;left:-34px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--bg2);border:2px solid var(--cyan)}
+.ed:first-child::before{border-color:var(--orange);box-shadow:0 0 12px var(--orange)}
+.ed .yr{font:400 .82rem var(--mono);color:var(--orange);margin-bottom:4px}
+.ed .inst{margin-top:4px;color:var(--steel)}
+.ed .by{color:var(--metal);font-size:.95rem}
+.wrap{max-width:1080px;margin:auto}
+h2{font:700 clamp(2rem,5vw,3.1rem)/1.05 var(--head);color:#fff;margin-bottom:44px}
+h3{font:600 1.45rem/1.2 var(--head);color:#fff}
+
+.about{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start}
+.about p{max-width:58ch}.about p+p{margin-top:1.1em}
+.tb{border:2px solid var(--metal)}
+.tb div{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.tb div:last-child{border:0}
+.tb dt{padding:13px 16px;border-right:1px solid var(--line);font:400 .82rem/1.9 var(--mono);color:var(--orange)}
+.tb dd{padding:13px 16px;color:#fff}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skill{padding:26px 24px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--cyan)}
+.skill h3{margin-bottom:8px}.skill p{color:var(--metal);font-size:1rem}
+.skill:nth-child(even){border-left-color:var(--orange)}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column;padding:30px 26px 26px;background:linear-gradient(160deg,var(--panel),#0d1217);border:1px solid var(--line);border-radius:6px;
+transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--s,1));transition:transform .2s ease-out,border-color .3s,box-shadow .3s}
+.card>*{position:relative;z-index:1}
+.card p{margin-top:12px;color:var(--metal);flex:1}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,140,40,.32),rgba(255,106,26,.1) 42%,transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card::after{content:"";position:absolute;z-index:2;left:var(--mx,50%);top:var(--my,50%);width:6px;height:6px;margin:-3px;border-radius:50%;background:#fff3d6;box-shadow:0 0 12px 4px #ffb347,0 0 42px 14px rgba(255,106,26,.55);opacity:0;pointer-events:none;transition:opacity .2s}
+.card:hover{--s:1.03;border-color:var(--orange);box-shadow:0 0 0 1px rgba(255,106,26,.5),0 0 34px rgba(255,106,26,.32),0 24px 50px rgba(0,0,0,.55)}
+.card:hover::before,.card:hover::after{opacity:1}
+.card:hover::after{animation:weld .16s steps(2) infinite}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{font:400 .72rem var(--mono);padding:4px 10px;border:1px solid var(--line);border-radius:2px;color:var(--cyan)}
+
+.panel{max-width:720px;padding:40px;border:1px solid var(--line);background:var(--panel);border-top:3px solid var(--orange)}
+.panel p{font-size:1.2rem;max-width:46ch}
+
+.haz{height:10px;background:repeating-linear-gradient(-45deg,var(--orange) 0 14px,#14181d 14px 28px);animation:slide 2s linear infinite}
+footer{padding:26px 6vw calc(26px + env(safe-area-inset-bottom,0px));font:400 .8rem var(--mono);color:var(--metal);background:var(--bg2)}
+
+.hero-in>h1{opacity:1;animation:none}
+.ch{display:inline-block;opacity:0;animation:drop .85s cubic-bezier(.2,.8,.2,1) forwards,glow 4.5s ease-in-out infinite;animation-delay:calc(var(--k)*.075s + .2s),calc(var(--k)*.14s + 1.8s)}
+a,.btn,nav a,.logo{cursor:pointer}
+.btn{position:relative;overflow:hidden;transition:background .25s,color .25s,box-shadow .25s,transform .15s}
+.btn:active{transform:scale(.94)}
+nav a{transition:color .2s,transform .15s}
+nav a:active,.logo:active{transform:scale(.88)}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+.sp{position:fixed;z-index:200;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#ffb347;box-shadow:0 0 8px 2px var(--orange);pointer-events:none;animation:burst .55s ease-out forwards}
+@keyframes drop{0%{opacity:0;transform:perspective(600px) translateY(-80px) rotateX(-90deg) scale(1.5);filter:blur(10px);color:var(--orange)}55%{opacity:1;color:var(--cyan);filter:blur(0)}100%{opacity:1;transform:perspective(600px) translateY(0) rotateX(0) scale(1);filter:blur(0);color:#fff}}
+@keyframes glow{0%,100%{text-shadow:0 0 40px rgba(0,229,255,.28);color:#fff}50%{text-shadow:0 0 16px rgba(0,229,255,.95),0 0 46px rgba(0,229,255,.5);color:#e2fcff}}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+@keyframes burst{to{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
+.js .reveal{opacity:0}
+.js .reveal.in{opacity:1;animation:rise .85s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--d,0s)}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pan{to{transform:translate(60px,60px)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes blink{50%{opacity:0}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes weld{50%{opacity:.5;transform:scale(1.9)}}
+@keyframes slide{to{background-position:39.6px 0}}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:36px}.panel{padding:28px 22px}.hero::after{background:linear-gradient(90deg,rgba(10,13,17,.85),rgba(10,13,17,.35))}}
+@media(max-width:520px){.logo{display:none}nav{flex:1;justify-content:space-between}nav a{font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){*:not(.spin),*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}.tp{stroke-dashoffset:0}.hero-in>*{opacity:1}.js .reveal{opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top" aria-label="Ashish Patel, top of page">AP<i>.</i></a>
+  <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  <div id="bar"></div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="grid" aria-hidden="true"></div>
+  <svg class="cad" id="cad" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <div class="hero-in">
+    <h1 style="--i:0">Ashish Patel</h1>
+    <p class="sub" style="--i:1" aria-label="Production Engineering Student at VSSUT Burla | Innovating Manufacturing &amp; Automation"><span id="tw"></span><i class="caret"></i></p>
+    <div class="cta" style="--i:2"><a class="btn pri" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+</section>
+
+<section class="s" id="about"><div class="wrap">
+  <h2 class="reveal">About</h2>
+  <div class="about stagger">
+    <div>
+      <p>I’m a Production Engineering student at VSSUT Burla, working where design meets the shop floor.</p>
+      <p>I model parts and assemblies in SolidWorks, automate the data side of manufacturing with Python, and apply Lean thinking to cut waste out of the process. Whether it’s a modular hand tool or a data pipeline, I like building things that make manufacturing simpler, faster and smarter.</p>
+    </div>
+    <dl class="tb">
+      <div><dt>drawn by</dt><dd>Ashish Patel</dd></div>
+      <div><dt>institute</dt><dd>VSSUT Burla</dd></div>
+      <div><dt>discipline</dt><dd>Production Engineering</dd></div>
+      <div><dt>tools</dt><dd>SolidWorks, Python</dd></div>
+      <div><dt>focus</dt><dd>Manufacturing &amp; automation</dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<section class="s" id="skills"><div class="wrap">
+  <h2 class="reveal">Skills</h2>
+  <div class="skills stagger">
+    <div class="skill"><h3>SolidWorks</h3><p>3D modeling and assembly.</p></div>
+    <div class="skill"><h3>Python</h3><p>Data pipelines and automation.</p></div>
+    <div class="skill"><h3>Manufacturing Processes</h3><p>How parts are actually made, from process selection to shop-floor flow.</p></div>
+    <div class="skill"><h3>Lean Principles</h3><p>Removing waste and building continuous improvement into every process.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="projects"><div class="wrap">
+  <h2 class="reveal">Projects</h2>
+  <div class="projects stagger">
+    <article class="card" tabindex="0">
+      <h3>FlexiTrim Pro</h3>
+      <p>A modular, portable vegetation trimmer with a quick-detach motor interface.</p>
+      <div class="tags"><span>modular design</span><span>portable</span><span>quick-detach</span></div>
+    </article>
+    <article class="card" tabindex="0">
+      <h3>SolidWorks 4-Cylinder Engine</h3>
+      <p>3D CAD modeling and motion animation of an engine assembly.</p>
+      <div class="tags"><span>SolidWorks</span><span>assembly</span><span>motion study</span></div>
+    </article>
+    <article class="card" tabindex="0">
+      <h3>Python Manufacturing Automation</h3>
+      <p>A 27-part lab series covering tool crib tracking, predictive maintenance and file ETL pipelines.</p>
+      <div class="tags"><span>Python</span><span>ETL</span><span>predictive maintenance</span><span>tool crib</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="s" id="education"><div class="wrap">
+  <h2 class="reveal">Education</h2>
+  <div class="tl stagger">
+    <article class="ed">
+      <p class="yr">Present</p>
+      <h3>Production Engineering</h3>
+      <p class="inst">Veer Surendra Sai University of Technology (VSSUT), Burla</p>
+      <p class="by">Focused on manufacturing processes, CAD and automation.</p>
+    </article>
+    <article class="ed">
+      <p class="yr">2026</p>
+      <h3>Diploma in Information Technology (Lateral Entry)</h3>
+      <p class="inst">Jharsuguda Engineering School, Jharsuguda</p>
+      <p class="by">State Council for Technical Education &amp; Vocational Training (SCTE&amp;VT), Odisha</p>
+      <div class="tags"><span>First Division</span><span>2360 / 3000 (78.7%)</span><span>provisional mark sheet</span></div>
+    </article>
+    <article class="ed">
+      <p class="yr">2024</p>
+      <h3>Higher Secondary (Class 12), Science</h3>
+      <p class="inst">Black Diamond Higher Secondary School, Jharsuguda</p>
+      <p class="by">Council of Higher Secondary Education (CHSE), Odisha</p>
+      <div class="tags"><span>Science (Regular)</span><span>First Division</span><span>372 / 600 (62%)</span></div>
+    </article>
+    <article class="ed">
+      <p class="yr">2022</p>
+      <h3>Secondary School (Class 10)</h3>
+      <p class="inst">DAV Public School, Jharsuguda</p>
+      <p class="by">Central Board of Secondary Education (CBSE)</p>
+      <div class="tags"><span>Pass</span><span>additional subject: Information Technology</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="s" id="contact"><div class="wrap">
+  <h2 class="reveal">Contact</h2>
+  <div class="panel reveal">
+    <p>Have a project, an idea or a question about manufacturing, automation or CAD? Let’s talk.</p>
+    <div class="cta">
+      <a class="btn pri" href="mailto:apatel91031@gmail.com">apatel91031@gmail.com</a>
+      <a class="btn" href="https://pagalpremibbsr-cyber.github.io/Portfolio" target="_blank" rel="noopener">GitHub portfolio</a>
+      <a class="btn" href="https://www.linkedin.com/in/ashish-patel-b69b26343" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<div class="haz" aria-hidden="true"></div>
+<footer>© 2026 Ashish Patel. Production Engineering at VSSUT Burla.</footer>
+
+<script>
+(function(){
+  /* CAD gears + CNC toolpath, drawn as SVG and animated with CSS keyframes */
+  function gear(t,ro,ri){var d='',s=Math.PI*2/t;
+    for(var k=0;k<t;k++){var a=k*s;[[0,ri],[.18,ro],[.5,ro],[.68,ri]].forEach(function(p,j){
+      d+=(k+j?'L':'M')+(p[1]*Math.cos(a+p[0]*s)).toFixed(1)+' '+(p[1]*Math.sin(a+p[0]*s)).toFixed(1)})}
+    return d+'Z'}
+  var G=[[900,330,20,250,215,'c',30,0],[579,515,12,157,121,'o',18,1],[170,650,16,110,92,'',24,0]],h='';
+  G.forEach(function(g){var x=g[0],y=g[1],ro=g[3],ri=g[4],sp=ri*.7;
+    h+='<circle class="dash" cx="'+x+'" cy="'+y+'" r="'+(ro+ri)/2+'"/>'+
+      '<g class="spin" style="animation-duration:'+g[6]+'s;animation-direction:'+(g[7]?'reverse':'normal')+'">'+
+      '<g class="'+g[5]+'" transform="translate('+x+' '+y+')"><path d="'+gear(g[2],ro,ri)+'"/>'+
+      '<circle r="'+ro*.2+'"/><circle class="dash" r="'+sp+'"/><path d="M0 '+(-sp)+'V'+sp+'M'+(-sp)+' 0H'+sp+'"/></g></g>'});
+  var x0=0,y0=0,x1=360,y1=120,gp=14,d='M0 0';
+  while(x1-x0>2*gp&&y1-y0>2*gp){d+='H'+x1+'V'+y1+'H'+x0+'V'+(y0+gp);x0+=gp;y0+=gp;x1-=gp;y1-=gp}
+  h+='<path class="tp o" pathLength="1" transform="translate(790 640)" d="'+d+'"/>';
+  document.getElementById('cad').innerHTML=h;
+
+  /* Animated name: letters drop in, then a glow wave runs through them */
+  var h1=document.querySelector('.hero h1'),nm=h1.textContent;
+  h1.setAttribute('aria-label',nm);h1.textContent='';
+  nm.split('').forEach(function(c,k){
+    if(c===' '){h1.appendChild(document.createTextNode(' '));return}
+    var s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');
+    s.style.setProperty('--k',k);s.textContent=c;h1.appendChild(s)});
+
+  /* Typewriter subtitle */
+  var tw=document.getElementById('tw'),
+      rm=matchMedia('(prefers-reduced-motion:reduce)').matches,
+      ph=['Production Engineering Student at VSSUT Burla','Innovating Manufacturing & Automation','Modeling in SolidWorks, automating with Python'],
+      p=0,i=0,del=false;
+  (function tick(){
+    var s=ph[p];
+    if(rm){tw.textContent=ph[0]+' | '+ph[1];return}
+    tw.textContent=s.slice(0,i);
+    if(!del&&i===s.length){del=true;setTimeout(tick,1800);return}
+    if(del&&i===0){del=false;p=(p+1)%ph.length}
+    i+=del?-1:1;setTimeout(tick,del?28:58)})();
+
+  /* Scroll reveal with Intersection Observer */
+  document.querySelectorAll('.stagger').forEach(function(g){
+    Array.prototype.forEach.call(g.children,function(c,n){c.classList.add('reveal');c.style.setProperty('--d',n*.14+'s')})});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  /* 3D tilt + welding-spark glow on project cards */
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+      c.style.setProperty('--ry',((x/r.width-.5)*14)+'deg');
+      c.style.setProperty('--rx',((.5-y/r.height)*14)+'deg')});
+    c.addEventListener('pointerleave',function(){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')})});
+
+  /* Click feedback: ripple on buttons, spark burst on any link or button */
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('a,.btn');if(!t)return;
+    var q=t.getBoundingClientRect(),cx=e.detail?e.clientX:q.left+q.width/2,cy=e.detail?e.clientY:q.top+q.height/2;
+    if(t.classList.contains('btn')){
+      var z=Math.max(q.width,q.height)*2,w=document.createElement('span');
+      w.className='rip';w.style.cssText='width:'+z+'px;height:'+z+'px;left:'+(cx-q.left-z/2)+'px;top:'+(cy-q.top-z/2)+'px';
+      w.addEventListener('animationend',function(){w.remove()});t.appendChild(w)}
+    for(var n=0;n<10;n++){
+      var s=document.createElement('i'),a=Math.PI*2*n/10+Math.random()*.5,d=28+Math.random()*34;
+      s.className='sp';s.style.cssText='left:'+cx+'px;top:'+cy+'px;--x:'+Math.cos(a)*d+'px;--y:'+Math.sin(a)*d+'px';
+      s.addEventListener('animationend',function(){this.remove()});document.body.appendChild(s)}
+  });
+
+  /* Scroll progress */
+  var bar=document.getElementById('bar');
+  addEventListener('scroll',function(){
+    var m=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
+})();
+</script>
+</body>
+</html>
